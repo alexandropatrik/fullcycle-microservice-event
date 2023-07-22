@@ -1,28 +1,33 @@
-POST http://localhost:3000/clients HTTP/1.1
+### EXECUTAR A CHAMADA AO MICRO SERVICO WALLET-BALANCE
+GET http://localhost:3003/balances/a64fa165-a9e0-4bad-ac83-ea3d6fe2aa39 HTTP/1.1
 Content-Type: application/json
 
-{
-    "name": "Jane Doe",
-    "email": "ja@j.com"
-}
 
-###
 
-POST http://localhost:3000/accounts HTTP/1.1
-Content-Type: application/json
+# POST http://localhost:3000/clients HTTP/1.1
+# Content-Type: application/json
 
-{
-    "client_id": "6f79eb7e-aecb-4435-a0cb-a6e4b1f2b122"
-}
+# {
+#     "name": "Joe Doe",
+#     "email": "j@j.com"
+# }
 
-### 
-POST http://localhost:3000/transactions HTTP/1.1
-Content-Type: application/json
+# ###
 
-{
-    "account_id_from": "26f2996d-b8fe-4493-8efe-5f75f18e58f9",
-    "account_id_to": "ac1cd14e-5344-4737-a2bf-9a0025a4e13d",
-    "amount": 75
-}
+# POST http://localhost:3000/accounts HTTP/1.1
+# Content-Type: application/json
 
+# {
+#     "client_id": "269ccdf3-51d9-4e16-ba7f-527fb0fbf68d"
+# }
+
+# ### 
+# POST http://localhost:3000/transactions HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "account_id_from": "4dbd4406-d6cd-4e27-88bd-a593b7ab5faa",
+#     "account_id_to": "a64fa165-a9e0-4bad-ac83-ea3d6fe2aa39",
+#     "amount": 8
+# }
 

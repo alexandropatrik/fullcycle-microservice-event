@@ -1,0 +1,27 @@
+server:
+  port: 3003
+  
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${POSTGRESQL_URL:jdbc:postgresql://localhost:55432/walletbalance}
+    username: postgres
+    password: postgres
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVER:kafka:9092}
+    consumer:
+      client-id: wallet-balance
+      group-id: wallet-balance-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
